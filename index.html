@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Math </title>
+    <style>
+        body {
+            background: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 300px;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin: auto;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        input {
+            width: 90%;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            margin: 5px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator 💔</h1>
+    <div class="container">
+        <input type="number" id="a" placeholder="Enter A">
+        <input type="number" id="b" placeholder="Enter B">
+        <button onclick="product()">Multiply</button>
+        <button onclick="division()">Divide</button>
+        <button onclick="addition()">Add</button>
+        <button onclick="subtraction()">Subtract</button>
+        <button onclick="compare()">Compare</button>
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function product() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            document.getElementById("result").innerHTML = "Product: " + (a * b);
+        }
+
+        function division() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            if (b === 0) {
+                document.getElementById("result").innerHTML = "Cannot divide by zero";
+            } else {
+                document.getElementById("result").innerHTML = "Division: " + (a / b);
+            }
+        }
+
+        function addition() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            document.getElementById("result").innerHTML = "Sum: " + (a + b);
+        }
+
+        function subtraction() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            document.getElementById("result").innerHTML = "Difference: " + (a - b);
+        }
+
+        function compare() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            if (a > b) {
+                document.getElementById("result").innerHTML = "Value of A is greater than Value of B (A > B)";
+            } else if (a < b) {
+                document.getElementById("result").innerHTML = "Value of A is less than Value of B (A < B)";
+            } else {
+                document.getElementById("result").innerHTML = "Value of A is equal to Value of B (A = B)";
+            }
+        }
+    </script>
+</body>
+</html>
